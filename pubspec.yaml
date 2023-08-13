@@ -7,9 +7,15 @@ environment:
   sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
+  dynamic_color: ^1.6.6
   flutter:
     sdk: flutter
+  flutter_barcode_scanner: ^2.0.0
+  google_fonts: ^5.1.0
+  image_gallery_saver: ^2.0.3
+  permission_handler: ^10.4.3
   qr_flutter: ^4.1.0
+  screenshot: ^2.1.0
 
 dev_dependencies:
   flutter_test:

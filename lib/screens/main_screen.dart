@@ -19,6 +19,15 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+            // leading: IconButton(
+            //   icon: const Icon(
+            //     Icons.menu_rounded,
+            //     size: 30,
+            //   ),
+            //   onPressed: () {},
+            // ),
+            ),
         body: MainScreen.screens[index],
         bottomNavigationBar: NavigationBar(
           labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
@@ -32,15 +41,20 @@ class _MainScreenState extends State<MainScreen> {
           destinations: const [
             NavigationDestination(
                 icon: Icon(
+                  size: 30,
                   Icons.qr_code_scanner_outlined,
                 ),
                 selectedIcon: Icon(
+                  size: 30,
                   Icons.qr_code_scanner_rounded,
                 ),
                 label: "QR Scanner"),
             NavigationDestination(
-              icon: Icon(Icons.qr_code_2_outlined),
-              selectedIcon: Icon(Icons.qr_code_2_rounded),
+              icon: Icon(
+                size: 30,
+                Icons.qr_code_2_outlined,
+              ),
+              selectedIcon: Icon(size: 30, Icons.qr_code_2_rounded),
               label: "QR Generator",
             ),
           ],
