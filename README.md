@@ -1,8 +1,6 @@
 # QR Code App with QR Code Generation and Barcode/QR Scanning Functionality using Flutter
 
-![QR Code App Banner](./assets/icon.png)
-
-This Flutter application is designed to provide users with the ability to generate QR codes and scan barcodes/QR codes using their mobile devices. The app is developed using Flutter, a popular UI framework for building natively compiled applications for mobile, web, and desktop from a single codebase.
+<img src = './assets/icon.png' width = '100' height = '100' alt = 'icon'> This Flutter application is designed to provide users with the ability to generate QR codes and scan barcodes/QR codes using their mobile devices. The app is developed using Flutter, a popular UI framework for building natively compiled applications for mobile, web, and desktop from a single codebase.
 
 ## Features
 
@@ -14,7 +12,8 @@ This Flutter application is designed to provide users with the ability to genera
 
 ## Screenshots
 
-![Screenshot 1](./assets/screenshots/Screenshot_1.jpg) ![Screenshot 2](./assets/screenshots/Screenshot_2.jpg)
+<img src = './assets/screenshots/Screenshot_1.jpg' width = '300' height = '600' alt = 'screenshot_1'>
+<img src = './assets/screenshots/Screenshot_2.jpg' width = '300' height = '600' alt = 'screenshot_2'>
 
 ## Getting Started
 
