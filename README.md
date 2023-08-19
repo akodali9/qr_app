@@ -12,8 +12,8 @@
 
 ## Screenshots
 
-<img src = './assets/screenshots/Screenshot_1.jpg' width = '300' height = '600' alt = 'screenshot_1'>
-<img src = './assets/screenshots/Screenshot_2.jpg' width = '300' height = '600' alt = 'screenshot_2'>
+<img src = './assets/screenshots/Screenshot_1.jpg' width = '280' height = '600' alt = 'screenshot_1'>
+<img src = './assets/screenshots/Screenshot_2.jpg' width = '280' height = '600' alt = 'screenshot_2'>
 
 ## Getting Started
 
