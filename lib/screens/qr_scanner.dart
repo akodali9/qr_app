@@ -10,39 +10,73 @@ class QRScanner extends StatefulWidget {
 }
 
 class _QRScannerState extends State<QRScanner> {
-  static String _scanBarcoderes = "";
+  static String _scancoderes = "";
+  TextEditingController rescontroller = TextEditingController();
   Future<void> scanBarcodeNormal() async {
     String barcodeScanresult;
     try {
-      barcodeScanresult = FlutterBarcodeScanner.scanBarcode(
-        '#ff666',
+      barcodeScanresult = await FlutterBarcodeScanner.scanBarcode(
+        '#ff3300',
         "Cancel",
         true,
         ScanMode.DEFAULT,
-      ) as String;
+      );
     } on PlatformException {
       barcodeScanresult = "Failed to get Platform version";
     }
     if (!mounted) return;
     setState(() {
-      _scanBarcoderes = barcodeScanresult;
+      _scancoderes = barcodeScanresult;
+      rescontroller.text = _scancoderes;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Builder(
-        builder: (context) => Container(
+      body: Center(
+        child: Container(
           alignment: Alignment.center,
-          child: Flex(
-            direction: Axis.vertical,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: scanBarcodeNormal,
-                child: const Text("Scan Barcode"),
+              Container(
+                margin: const EdgeInsets.all(16.0),
+                child: TextFormField(
+                  readOnly: true,
+                  controller: rescontroller,
+                  decoration: InputDecoration(
+                    suffixIcon: rescontroller.text != ""
+                        ? IconButton(
+                            onPressed: () async {
+                              await Clipboard.setData(
+                                      ClipboardData(text: _scancoderes))
+                                  .then((res) {
+                                const copysnackbar = SnackBar(
+                                    content: Text('Copied to clipboard'));
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(copysnackbar);
+                              });
+                            },
+                            icon: const Icon(Icons.copy))
+                        : const SizedBox(),
+                    border: const OutlineInputBorder(),
+                    label: const Text("Scan result"),
+                  ),
+                ),
               ),
-              // Text(_scanBarcoderes),
+              const SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () => scanBarcodeNormal(),
+                child: const Text(
+                  "Scan Barcode / Qr",
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              ),
             ],
           ),
         ),

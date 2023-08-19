@@ -1,7 +1,6 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:qr_app/screens/main_screen.dart';
 
 void main() {
@@ -27,16 +26,10 @@ class MainApp extends StatelessWidget {
       builder: (lightDynamic, darkDynamic) => MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          textTheme: GoogleFonts.poppinsTextTheme(
-            Theme.of(context).textTheme,
-          ),
           colorScheme: lightDynamic ?? _defaultLightColorScheme,
           useMaterial3: true,
         ),
         darkTheme: ThemeData(
-          textTheme: GoogleFonts.poppinsTextTheme(
-            Theme.of(context).textTheme,
-          ),
           colorScheme: darkDynamic ?? _defaultDarkColorScheme,
           useMaterial3: true,
         ),
